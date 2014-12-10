@@ -1,0 +1,14 @@
+/*
+** my_strstr.c for my_strstr.c in /home/xxx/Things_Learn/Algorithms/Standford
+** 
+** Made by 
+** Login   <xxx@epitech.eu>
+** 
+** Started on  Wed Dec 10 13:37:43 2014 
+** Last update Wed Dec 10 13:40:13 2014 
+*/
+
+char		*my_strstr(char *str, char *to_find)
+{
+  
+}
