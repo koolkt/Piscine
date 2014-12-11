@@ -1,0 +1,14 @@
+/*
+** my_strcapitalize.c for my_strcapitalize.c in /home/xxx/Things_Learn/Algorithms/Standford
+** 
+** Made by 
+** Login   <xxx@epitech.eu>
+** 
+** Started on  Wed Dec 10 19:22:19 2014 
+** Last update Wed Dec 10 19:22:19 2014 
+*/
+
+char		*my_strcapitalize(char *str)
+{
+  
+}

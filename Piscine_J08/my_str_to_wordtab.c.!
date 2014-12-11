@@ -1,0 +1,73 @@
+/*
+** my_str_to_wordtab.c for my_lib in /home/xxx/Test/piscine/pj8
+** 
+** Made by xxx xxx
+** Login   <flores_a@epitech.eu>
+** 
+** Started on  Tue Nov  4 17:18:19 2014 xxx xxx
+** Last update Wed Nov  5 18:32:16 2014 
+*/
+
+int	count_words(char *str)
+{
+  int	i;
+  int	w;
+
+  i = 0;
+  w = 0;
+  while (str[i])
+    {
+      if (str[i]!= '\0' && ((str[i] >= '0' && str[i] <= '9' ||
+	   str[i] >= 'a' && str[i] <= 'z' ||
+	   str[i] >= 'A' && str[i] <= 'Z') &&
+	  (str[i - 1] < '0' || str[i - 1] > '9') &&
+	  (str[i - 1] < 'a' || str[i - 1] > 'z') &&
+	  (str[i - 1] < 'A' || str[i - 1] > 'Z')))
+	++w;
+      ++i;
+    }
+  return (w);
+}
+
+int	count_char(char *str, int c)
+{
+  int	i;
+
+  i = 0;
+  while (str[i])
+    {
+      if ( ((str[i] >= '0' && str[i] <= '9' ||
+	     str[i] >= 'a' && str[i] <= 'z' ||
+	     str[i] >= 'A' && str[i] <= 'Z')) && str[i])
+	while ( ((str[i] >= '0' && str[i] <= '9' ||
+		  str[i] >= 'a' && str[i] <= 'z' ||
+		  str[i] >= 'A' && str[i] <= 'Z')) && str[i])
+	  {
+	    c += 1;
+	    if (str[i] != '\0')
+	      i += 1;
+	  }
+      else if (str[i] != '\0')
+	i += 1;
+    }
+  return (c);
+}
+
+char	**my_str_to_wordtab(char *str)
+{
+  /* char **wordtab; */
+
+  /* if ((wordtab = malloc((count_words(str) + 1) *  */
+  /* 			sizeof(char*))) == NULL) */
+  /*   return (0); */
+  /* count_char(str) */
+  my_put_nbr(count_char(str, 0));
+  //my_put_nbr(count_words(str));
+  return (0);
+}
+
+int	main(int argc, char **argv)
+{
+  my_str_to_wordtab(argv[1]);
+  return (0);
+}
