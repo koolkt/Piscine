@@ -5,7 +5,7 @@
 ** Login   <xxx@epitech.eu>
 ** 
 ** Started on  Sat Dec 13 03:15:46 2014 
-** Last update Sat Dec 13 03:52:52 2014 
+** Last update Sat Dec 13 21:10:15 2014 
 */
 
 int		my_strlen(char *str)

@@ -5,19 +5,16 @@
 ** Login   <xxx@epitech.eu>
 ** 
 ** Started on  Sat Dec 13 05:28:19 2014 
-** Last update Sat Dec 13 19:19:10 2014 
+** Last update Sat Dec 13 19:28:35 2014 
 */
 
 void		put_hex(char c)
 {
   int		i;
   char		str[64];
-  char		hex[] = {[0] = '0', [1] = '1', [2] = '2',
-			[3] = '3', [4] = '4', [5] = '5',
-			[4] = '4', [5] = '5', [6] = '6',
-			[7] = '7', [8] = '8', [9] = '9',
-			[10] = 'a', [11] = 'b', [12] = 'c',
-			[13] = 'd', [14] = 'e', [15] = 'f'};
+  char		*hex;
+
+  hex = "0123456789abcdef";
   i = 0;
   while (c)
     {
