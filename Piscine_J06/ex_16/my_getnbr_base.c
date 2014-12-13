@@ -5,7 +5,7 @@
 ** Login   <xxx@epitech.eu>
 ** 
 ** Started on  Sat Dec 13 04:00:03 2014 
-** Last update Sat Dec 13 05:23:04 2014 
+** Last update Sat Dec 13 06:06:58 2014 
 */
 
 int		test_base(char *base, char *hsh)
@@ -17,7 +17,7 @@ int		test_base(char *base, char *hsh)
     {
       if (hsh[base[i]])
 	return (0);
-      hsh[base[i]] = 1;
+      hsh[base[i]] = i;
       ++i;
     }
   return (i);
@@ -49,11 +49,12 @@ int		power(int base,int exp)
   return (base * power(base, exp - 1));
 }
 
-int		getnbr(char *str, int nbase)
+int		getnbr(char *str, int nbase, char *hsh)
 {
   char		is_neg;
   int		i;
   int		exp;
+  int		nb;
   int		result;
 
   result = 0;
@@ -65,9 +66,9 @@ int		getnbr(char *str, int nbase)
       ++i;
     }
   --i;
-  while (str[i] != '+' && str[i] != '+' && str[i])
+  while (str[i] != '+' && str[i] != '-' && str[i])
     {
-      result += (str[i] - 48) * power(nbase, exp);
+      result += hsh[str[i]] * power(nbase, exp);
       ++exp;
       --i;
     }
@@ -91,6 +92,6 @@ int		my_getnbr_base(char *str, char *base)
   else if (test_str(str, hsh))
     result = 0;
   else
-    result = getnbr(str, nbase);
+    result = getnbr(str, nbase, hsh);
   return (result);
 }
