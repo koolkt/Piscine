@@ -4,8 +4,7 @@
 ** Made by 
 ** Login   <xxx@epitech.eu>
 ** 
-** Started on  Sat Dec 13 19:29:21 2014 
-** Last update Sat Dec 13 21:11:49 2014 
+** Last update Sat Dec 13 21:18:58 2014 
 */
 
 void		put_hex(char c)
