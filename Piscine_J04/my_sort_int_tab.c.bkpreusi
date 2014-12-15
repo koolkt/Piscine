@@ -1,0 +1,60 @@
+/*
+** my_sort_int_tab.c for my_sort_int_tab.c in /home/xxx/Test/my_lib
+** 
+** Made by xxx xxx
+** Login   <flores_a@epitech.net>
+** 
+** Started on  Fri Oct 24 13:41:00 2014 xxx xxx
+** Last update Tue Oct 28 10:22:57 2014 xxx xxx
+*/
+
+void	my_putnbstr(int *array, int size)
+{
+  int	i;
+
+  i = 0;
+  while (i < size)
+    {
+      my_put_nbr(array[i]);
+      ++i;
+    }
+  return;
+}
+
+void	my_sort_int_tab(int *tab, int size)
+{
+  int	temp;
+  int	i;
+  int	j;
+  
+  j = 0;
+  i = 0;
+  temp= 0;
+  while (j < size)
+    {
+      while ( i < size - 1)
+	{
+	  if  (tab[i] > tab[i + 1] )
+	    {
+	      temp = tab[i];
+	      tab[i] = tab[i + 1];
+	      tab[i + 1] = temp;
+	      i++;
+	    }
+	  else
+	    ++i;
+	}
+      i = 0;
+      ++j;
+    }
+}
+
+int	main()
+{
+  int	str[3] = {100, 9, 8};
+  
+  my_putnbstr(str, 3);
+  my_putchar('\n');
+  my_sort_int_tab(str, 3);
+  my_putnbstr(str, 3);
+}

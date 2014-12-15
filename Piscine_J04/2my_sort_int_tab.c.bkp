@@ -1,0 +1,95 @@
+/*
+** copiemy_sort_int_tab.c for copie in /home/xxx/Test/my_lib
+** 
+** Made by xxx xxx
+** Login   <flores_a@epitech.net>
+** 
+** Started on  Fri Oct 24 16:43:55 2014 xxx xxx
+** Last update Fri Oct 24 19:20:36 2014 xxx xxx
+*/
+
+int	*bigestnb(int *tab, int size, int j)
+{
+  int	i;
+  int	big;
+
+  i = 0;
+  big = tab[i];
+  while (i < size - (j + 1))
+    {
+      if (big < tab[i + 1])
+	big  = tab[i + 1];
+      ++i;
+    }
+  i = 0;
+  while (i < size)
+    {
+      if (big == tab[i])
+	i = size + 1;
+      ++i;
+    }
+  return (tab + (i - 1));
+}
+
+int	*smallestnb(int *tab, int size)
+{
+  int	i;
+  int	small;
+
+  i = 0;
+  small = tab[i];
+  while (i < size -1)
+    {
+      if (small > tab[i + 1])
+	small  = tab[i + 1];
+      ++i;
+    }
+  i = 0;
+  while (tab[i])
+    {
+      if (small == tab[i])
+	i = size;
+    }
+  return (tab + i);
+}
+
+void	swapbigest(int *biggest, int *tab, int j, int size)
+{
+  int	tmp;
+
+  tmp = tab[size - (j + 1)];
+  tab[size - (j + 1)] = *biggest;
+ *biggest = tmp;
+}
+
+void	swapsmallest()
+{
+
+}
+void	my_sort_int_tab(int *tab, int size)
+{
+  int	i;
+
+  i = 0;
+  while (i < size -1)
+    {
+      swapbigest(bigestnb(tab, size, i), tab, i, size);
+      // smallestnb(tab);
+      // swapsmallest();
+      ++i;
+    }
+}
+
+int	main()
+{
+  int	i;
+  int	str[5] = {5,4,3,2,1};
+
+  i = 0;
+  my_sort_int_tab(str, 5);
+  while (str[i +1])
+    {
+      my_putchar(str[i] + 48);
+      ++i;
+    }
+}

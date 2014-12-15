@@ -1,0 +1,20 @@
+/*
+** maingetnbr.c for maingetnbr.c in /home/xxx/Test/my_lib
+** 
+** Made by xxx xxx
+** Login   <flores_a@epitech.net>
+** 
+** Started on  Thu Oct 23 16:54:23 2014 xxx xxx
+** Last update Fri Oct 24 00:09:01 2014 xxx xxx
+*/
+
+int     main(int argc, char **argv)
+{
+  char  str[24] = "Usage: program \"string\"";
+  
+  if (argc < 2)
+    write(1, str, 25);
+  else
+    my_put_nbr(my_getnbr(argv[1]));
+  write(1, "\n", 1); 
+} 
