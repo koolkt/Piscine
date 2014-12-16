@@ -5,35 +5,17 @@
 ** Login   <xxx@epitech.eu>
 ** 
 ** Started on  Wed Dec 10 16:48:39 2014 
-** Last update Wed Dec 10 18:38:45 2014 
+** Last update Tue Dec 16 00:33:07 2014 
 */
 
-int		sum(char *str)
+int		my_strcmp (const char *s1, const char *s2)
 {
-  int		i;
-  int		res;
-
-  i = 0;
-  res = 0;
-  if (str != 0)
-    while (str[i])
+  while(*s1 == *s2)
     {
-      res += str[i];
-      ++i;
+      if(*s1 == '\0')
+	return 0;
+      ++s1;
+      ++s2;
     }
-  return (res);
-}
-
-int		my_strcmp(char *s1, char *s2)
-{
-  int		sum1;
-  int		sum2;
-  int		result;
-
-  result = 0;
-  sum1 = sum(s1);
-  sum2 = sum(s2);
-  if (sum1 != sum2)
-    result = (sum1 - sum2);
-  return (result);
+  return (*s1 - *s2);
 }
