@@ -5,7 +5,7 @@
 ** Login   <flores_a@epitech.eu>
 ** 
 ** Started on  Thu Dec 18 17:44:59 2014 
-** Last update Thu Dec 18 23:35:33 2014 
+** Last update Wed Dec 24 15:49:13 2014 
 */
 
 t_list		*my_params_in_list(int ac, char **av)
@@ -15,14 +15,16 @@ t_list		*my_params_in_list(int ac, char **av)
   int		i;
 
   i = 0;
-  node = malloc(sizeof(t_list));
+  if ((node = malloc(sizeof(t_list))) == NULL)
+    return (NULL);
   node->next = NULL;
   while (i < ac)
     {   
       node->data = av[i++];
       if (i != ac)
 	{
-	  prox = malloc(sizeof(t_list));
+	  if ((prox = malloc(sizeof(t_list))) == NULL)
+	    return (NULL);
 	  prox->next = node;
 	  node = prox;
 	}
